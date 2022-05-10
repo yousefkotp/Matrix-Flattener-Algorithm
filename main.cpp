@@ -9,12 +9,13 @@ int main()
     //n & m & p are the sizes of our 3*3*3 matrix
     //N = HEIGHT, M = WIDTH, P = DEPTH
     int n=2,m=3,p=4;
+    int q = n*m*p;          //size of 1D array
     //n -> number of rows (x-axis)
     //m -> number of columns (y-axis)
     //p -> depth of the matrix (z-axis)
 
     //the array where we will flatten the matrix into
-    vector<int>v(n*m*p);
+    vector<int>v(q);
     int test [n][m][p] = {
                             { {1,2,3,4},        {5,6,7,8},          {9,10,11,12} },
                             { {13,14,15,16},    {17,18,19,20},      {21,22,23,24} }
@@ -41,8 +42,8 @@ int main()
         k--;
 
         // our formula is i + ( j * HEIGHT ) + ( k * HEIGHT * WIDTH )
-        int x = i + (j*n) + (k*n*m);
-        cout<<"The vector of indices "<<i+1<<" "<<j+1<<" "<<k+1<<" is: "<<v[x] <<endl;
+        int y = i + (j*n) + (k*n*m);
+        cout<<"The vector of indices "<<i+1<<" "<<j+1<<" "<<k+1<<" is: "<<v[y] <<endl;
     }
 
 
